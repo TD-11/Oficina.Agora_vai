@@ -7,12 +7,16 @@ public class Abacaxi : MonoBehaviour
 {
     private SpriteRenderer sr;
 
-    private CircleCollider2D cicle;
+    private CircleCollider2D circle;
+
+    public GameObject coletado;
+
+    public int pontuacao;
     // Start is called before the first frame update
     void Start()
     {
         sr = GetComponent<SpriteRenderer>();
-        cicle = GetComponent<CircleCollider2D>();
+        circle = GetComponent<CircleCollider2D>();
     }
 
     // Update is called once per frame
@@ -21,7 +25,13 @@ public class Abacaxi : MonoBehaviour
     {
         if (collider.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            sr.enabled = false;
+            circle.enabled = false;
+            coletado.SetActive(true);
+
+            GameController.instancia.pontuacaoTotal += pontuacao;
+            
+            Destroy(gameObject, 0.5f);
         }
     }
 }
