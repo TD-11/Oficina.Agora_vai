@@ -30,7 +30,6 @@ public class Abacaxi : MonoBehaviour
             coletado.SetActive(true);
 
             GameController.instancia.pontuacaoTotal += pontuacao;
-            GameController.instancia.AtualizarTexto();
             
             Destroy(gameObject, 0.5f);
         }

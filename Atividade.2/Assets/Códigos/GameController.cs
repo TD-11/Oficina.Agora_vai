@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class GameController : MonoBehaviour
 {
     public int pontuacaoTotal;
-    public Text texto;
+    public TMP_Text texto;
 
     public static GameController instancia;
     // Start is called before the first frame update
@@ -15,7 +16,7 @@ public class GameController : MonoBehaviour
         instancia = this;
     }
 
-    public void AtualizarTexto()
+    void Update()
     {
         texto.text = pontuacaoTotal.ToString();
     }
