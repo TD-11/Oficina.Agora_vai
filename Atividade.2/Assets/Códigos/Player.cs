@@ -77,6 +77,21 @@ public class Player : MonoBehaviour
             pulando = false;
             anim.SetBool("Pulando", false);
         }
+        if (collision.gameObject.tag == "Espinhos")
+        {
+            GameController.instancia.MostrarDerrota();
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Finish")
+        {
+            GameController.instancia.MostrarDerrota();
+            Destroy(gameObject);
+        }
+        if (collision.gameObject.tag == "Vitória")
+        {
+            GameController.instancia.MostrarMSG();
+            Destroy(gameObject);
+        }
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
