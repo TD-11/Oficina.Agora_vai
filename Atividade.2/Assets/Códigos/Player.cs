@@ -55,7 +55,7 @@ public class Player : MonoBehaviour
         {
             if (!pulando)
             {
-                rig.AddForce(new Vector2(0f, forcaPulo), ForceMode2D.Impulse);
+                rig.velocity = Vector2.up * forcaPulo;
                 puloDuplo = true;
                 anim.SetBool("Pulando", true);
             }
@@ -63,7 +63,7 @@ public class Player : MonoBehaviour
             {
                 if (puloDuplo)
                 {
-                    rig.AddForce(new Vector2(0f, forcaPulo), ForceMode2D.Impulse);
+                    rig.velocity = Vector2.up * forcaPulo;
                     puloDuplo = false;
                 }
             }
